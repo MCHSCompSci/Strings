@@ -1,0 +1,64 @@
+//Name: Nick Clark
+//Lab: Strings
+//I got help from: Cameron and Bryan Smith
+//Date:12/01/15
+import java.util.Scanner;
+public class HybridName
+ {
+ 	public static void main (String[]args)
+ 	{
+	Scanner in = new Scanner (System.in);
+	String femaleName="";
+	String maleName="";
+	String maleHybrid="";
+	String femaleHybrid="";
+
+		//Name Generator Instructions
+		System.out.println("This Program reads in two names,one male and the other female.\nIt should combine the names in two ways.");
+		System.out.println("Type \"quit\" in all lower case in place of both names to quit the program");
+		System.out.println();
+
+		while(!(maleName.equals ("quit") || femaleName.equals ("quit")))
+		{
+			//Male Name is made by user here
+			do
+			{
+				System.out.println("Please Input male name containing at least 4 letters: ");
+				maleName=in.nextLine();
+			}
+			while(maleName.length() <= 3);
+
+			//Female Name is made by user here
+			do
+			{
+				System.out.println("Please Input female name containing at least 4 letters: ");
+				femaleName=in.nextLine();
+			}
+			while(femaleName.length() <= 3);
+
+		//if names follow the criteria, hybrid will be created
+
+			if(!(maleName.equals(femaleName)) && !(femaleName.equals ("quit")) && !(maleName.equals ("quit")))
+			{
+				femaleHybrid=maleName.substring(0,3)+femaleName.substring(3,(femaleName.length()));
+				maleHybrid=femaleName.substring(0,3)+maleName.substring(3,(maleName.length()));
+				System.out.println();
+				System.out.println("Female Hybrid Name: "+femaleHybrid);
+				System.out.println("Male Hybrid Name: "+maleHybrid);
+			}
+			else
+				if(!(femaleName.equals ("quit") || maleName.equals ("quit")))
+			{
+				System.out.println("The names are matching. Please restart and create non-matching names!");
+			}
+			else
+			{
+
+			}
+
+	}
+
+
+
+ 	}
+}
